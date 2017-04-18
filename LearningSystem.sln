@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningSystem.Web", "LearningSystem.Web\LearningSystem.Web.csproj", "{B73BDF52-FF80-4F9F-8BCA-29535BD0934A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningSystem.Models", "LearningSystem.Models\LearningSystem.Models.csproj", "{87A87BB5-2643-4599-9533-07E1BB6BBE54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B73BDF52-FF80-4F9F-8BCA-29535BD0934A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B73BDF52-FF80-4F9F-8BCA-29535BD0934A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B73BDF52-FF80-4F9F-8BCA-29535BD0934A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A87BB5-2643-4599-9533-07E1BB6BBE54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A87BB5-2643-4599-9533-07E1BB6BBE54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A87BB5-2643-4599-9533-07E1BB6BBE54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A87BB5-2643-4599-9533-07E1BB6BBE54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
