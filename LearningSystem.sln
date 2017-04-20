@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningSystem.Models", "Le
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningSystem.Data", "LearningSystem.Data\LearningSystem.Data.csproj", "{776C3328-55DB-48D2-9695-23C6F38AD962}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningSystem.Services", "LearningSystem.Services\LearningSystem.Services.csproj", "{BCC8196B-59EE-430E-BEBC-ECFBF2B810AC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{776C3328-55DB-48D2-9695-23C6F38AD962}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{776C3328-55DB-48D2-9695-23C6F38AD962}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{776C3328-55DB-48D2-9695-23C6F38AD962}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCC8196B-59EE-430E-BEBC-ECFBF2B810AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCC8196B-59EE-430E-BEBC-ECFBF2B810AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCC8196B-59EE-430E-BEBC-ECFBF2B810AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCC8196B-59EE-430E-BEBC-ECFBF2B810AC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

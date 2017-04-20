@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using LearningSystem.Models.Entity;
+using LearningSystem.Models.View.Course;
 
 namespace LearningSystem.Web
 {
@@ -12,10 +15,19 @@ namespace LearningSystem.Web
     {
         protected void Application_Start()
         {
+            RegisterAutomapper();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        private void RegisterAutomapper()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<Course, CreateVM>();
+            });
         }
     }
 }

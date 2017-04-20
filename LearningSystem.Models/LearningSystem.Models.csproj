@@ -107,6 +107,7 @@
     <Compile Include="View\Account\ResetPasswordViewModel.cs" />
     <Compile Include="View\Account\SendCodeViewModel.cs" />
     <Compile Include="View\Account\VerifyCodeViewModel.cs" />
+    <Compile Include="View\Course\CreateVM.cs" />
     <Compile Include="View\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="View\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="View\Manage\ConfigureTwoFactorViewModel.cs" />

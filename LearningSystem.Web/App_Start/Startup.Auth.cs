@@ -57,8 +57,8 @@ namespace LearningSystem.Web
             //   consumerSecret: "");
 
             //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            //   appId: "1305038496215984",
+            //   appSecret: "9b4e3fa6a0cb7b888fc97c505d4788da");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

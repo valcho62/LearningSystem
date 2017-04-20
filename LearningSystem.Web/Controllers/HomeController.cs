@@ -3,16 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using LearningSystem.Services;
+using LearningSystem.Web.Attributes;
 
 namespace LearningSystem.Web.Controllers
 {
     public class HomeController : Controller
     {
+        public HomeService Service { get; set; }
+
+        public HomeController()
+        {
+            this.Service =new HomeService();
+        }
         public ActionResult Index()
         {
-            return View();
+            var model = Service.GetAllCourses();
+            return View(model);
         }
 
+        [MyAuthorize (Roles = "Admin")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
