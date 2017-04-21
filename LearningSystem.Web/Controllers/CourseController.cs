@@ -9,6 +9,8 @@ using LearningSystem.Services;
 
 namespace LearningSystem.Web.Controllers
 {
+    [RoutePrefix("course")]
+    [Authorize]
     public class CourseController : Controller
     {
         public CourseService Service { get; }
@@ -18,16 +20,28 @@ namespace LearningSystem.Web.Controllers
             this.Service =new CourseService();
         }
         // GET: Course
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var model = Service.GetAllCourses();
-            return View();
+            return View(model);
         }
 
+
        
+        [Route ("signin/{name}")]
         public ActionResult Signin(string name)
         {
-            this.Service.SignStudentToCourse(name);
+            var user = User.Identity.Name;
+            this.Service.SignStudentToCourse(name,user);
+            return RedirectToAction("Index");
+        }
+
+        [Route("signout/{name}")]
+        public ActionResult Signout(string name)
+        {
+            var user = User.Identity.Name;
+            this.Service.SignOutStudentFromCourse(name, user);
             return RedirectToAction("Index");
         }
 

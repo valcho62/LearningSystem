@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using LearningSystem.Models.Entity;
 using LearningSystem.Models.View.Account;
+using LearningSystem.Services;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -20,12 +21,14 @@ namespace LearningSystem.Web.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private AccountService service;
 
         public AccountController()
         {
+            this.service =new AccountService();
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager ):this()
         {
             UserManager = userManager;
             SignInManager = signInManager;
@@ -155,9 +158,11 @@ namespace LearningSystem.Web.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    this.service.RegisterStudent(user);
                     UserManager.AddToRole(user.Id, "Student");
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     

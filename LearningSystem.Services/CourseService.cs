@@ -30,10 +30,27 @@ namespace LearningSystem.Services
             return result;
         }
 
-        public void SignStudentToCourse(string courseName)
+        public void SignStudentToCourse(string courseName,string currentUser)
         {
             var course = Contex.Courses.FirstOrDefault(x => x.Name == courseName);
-            var user = Request
+            var student = Contex.Students.FirstOrDefault(x => x.User.Email == currentUser);
+            course.Students.Add(student);
+            student.Courses.Add(course);
+            Contex.SaveChanges();
+        }
+
+        public bool CheckIsInCourse(string userName)
+        {
+            return true;
+        }
+
+        public void SignOutStudentFromCourse(string courseName, string currentUser)
+        {
+            var course = Contex.Courses.FirstOrDefault(x => x.Name == courseName);
+            var student = Contex.Students.FirstOrDefault(x => x.User.Email == currentUser);
+            course.Students.Remove(student);
+            student.Courses.Remove(course);
+            Contex.SaveChanges();
         }
     }
 }

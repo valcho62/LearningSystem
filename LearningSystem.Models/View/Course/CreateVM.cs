@@ -11,6 +11,7 @@ namespace LearningSystem.Models.View.Course
         public string Description { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
+        public virtual ICollection<Student> Students { get; set; }
        
     }
 }

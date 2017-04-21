@@ -18,8 +18,8 @@ namespace LearningSystem.Web.Controllers
         }
         public ActionResult Index()
         {
-            var model = Service.GetAllCourses();
-            return View(model);
+
+            return RedirectToAction("Index", "Course");
         }
 
         [MyAuthorize (Roles = "Admin")]

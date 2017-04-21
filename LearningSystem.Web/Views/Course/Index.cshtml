@@ -1,4 +1,5 @@
-﻿@model IEnumerable<LearningSystem.Models.View.Course.CreateVM>
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<LearningSystem.Models.View.Course.CreateVM>
 
 @{
     ViewBag.Title = "Index";
@@ -41,9 +42,31 @@
             <td>
                 @Html.DisplayFor(modelItem => item.EndDate)
             </td>
-            <td>
-                @Html.ActionLink("Sign in", "Signin", "Course",new {name = item.Name})
-            </td>
+            @if (item.EndDate < DateTime.Now)
+            {
+                <td>Finished</td>
+            }
+            else if (item.StartDate < DateTime.Now)
+            {
+                <td>Started</td>
+            }
+            else if (Request.IsAuthenticated && !item.Students.Any(x => x.User.Email == User.Identity.Name))
+            {
+                <td>
+                    @Html.ActionLink("Sign in", "Signin", new { name = item.Name })
+                </td>
+            }
+            else if (Request.IsAuthenticated && item.Students.Any(x => x.User.Email == User.Identity.Name))
+            {
+                <td>
+                    @Html.ActionLink("Sign out", "Signout", new { name = item.Name })
+                </td>
+            }
+            else
+            {
+                <td></td>
+            }
+
 
         </tr>
     }
