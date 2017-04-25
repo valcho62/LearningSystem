@@ -52,5 +52,12 @@ namespace LearningSystem.Services
             student.Courses.Remove(course);
             Contex.SaveChanges();
         }
+
+        public CreateVM GetCourseDetails(string name)
+        {
+            var course = this.Contex.Courses.FirstOrDefault(x => x.Name == name);
+            var courseModel = Mapper.Map<CreateVM>(course);
+            return courseModel;
+        }
     }
 }

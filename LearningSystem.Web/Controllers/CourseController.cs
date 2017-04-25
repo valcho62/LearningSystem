@@ -63,10 +63,11 @@ namespace LearningSystem.Web.Controllers
             return this.View();
         }
 
-        // GET: Course/Edit/5
-        public ActionResult Edit(int id)
+        
+        public ActionResult Details(string name)
         {
-            return View();
+            var model = this.Service.GetCourseDetails(name);
+            return View(model);
         }
 
         // POST: Course/Edit/5
