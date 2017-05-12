@@ -1,0 +1,10 @@
+﻿#chat-area {
+    background-color: #AED3F2;
+    border: 1px solid black
+}
+#mine {
+    background-color: #5176A6;
+}
+#not-mine {
+    background-color: #1B98A6;
+}

@@ -1,0 +1,38 @@
+﻿
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="Content/bootstrap.css" />
+    <link rel="stylesheet" href="Content/chat.css"/>
+
+</head>
+<body>
+    <div class="container">
+        <h2 id="user-name"></h2>
+
+       
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="12">Message:</label>
+                <input type="text" class="form-control col-sm-4" id="message" placeholder="Въведи текста" name="1">
+            </div>
+            <input type="button" id ="send-message" class="btn btn-primary" value="Send">
+       
+    </div>
+    <hr />
+    <div class="container col-lg-4" id="chat-area">
+        <ul id="chat-conversation">
+        </ul>
+    </div>
+    
+<script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/jquery.signalR-2.2.2.js"></script>
+    <script src="/signalr/hubs"></script>
+    <script src="Scripts/rtcInput.js"></script>
+    <script src="Scripts/rtcOutput.js"></script>
+    <script>
+        $('#user-name').html(prompt('Enter your name ! :', ''))
+    </script>
+
+</body>
+
+
